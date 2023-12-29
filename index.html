@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Laptop</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo">
+        <img src="images/icons8-laptop-64.png" alt="">
+    </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#menu">products terbaru</a>
+        <a href="#review">review</a>
+        <a href="#contact">contact</a>
+        <a href="#blogs">blogs</a>
+    </nav>
+
+    <div class="icons" id="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <button onclick="performSearch()"><i class="fas fa-search"></i></button>
+    </div>
+    
+    <div class="search-results" id="search-results">
+        <!-- Hasil pencarian akan muncul di sini -->
+    </div>
+    
+    <script>
+        function performSearch() {
+            var searchQuery = document.getElementById('search-box').value.toLowerCase();
+    
+            var searchData = [
+                { id: 1, name: "Asus Vivobook 14", specs: "Intel Core i5-1135G7 Gen 11, Ram 8GB DDR 4GB, FHD, 512GB M.2 SSD" },
+                { id: 2, name: "Lenovo Ideapad 33081D100EDUS", specs: "Intel Pentium N5000, Ram 4GB, HD, Hardisk 500GB" },
+                // ... Tambahkan data produk lainnya di sini
+            ];
+    
+            var searchResults = searchData.filter(function(product) {
+                return (
+                    product.name.toLowerCase().includes(searchQuery) ||
+                    product.specs.toLowerCase().includes(searchQuery)
+                );
+            });
+    
+            displaySearchResults(searchResults);
+        }
+    
+        function displaySearchResults(results) {
+            var resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = '';
+    
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<p>No results found</p>';
+            } else {
+                results.forEach(function(result) {
+                    var resultElement = document.createElement('div');
+                    resultElement.classList.add('search-item');
+                    resultElement.innerHTML = `
+                        <p>ID: ${result.id}</p>
+                        <p>Name: ${result.name}</p>
+                        <p>Specs: ${result.specs}</p>
+                    `;
+                    resultsContainer.appendChild(resultElement);
+                });
+            }
+        }
+    </script>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>Toko Laptop Yuyun Musfia</h3>
+        <p>Jualan Laptop Termurah, Terbaru, Dan Diskon Terbanyak.</p>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>about</span> us <span>Laptop</span></h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="images/colorful_laptop_with_black_background_4k_hd_black_aesthetic.jpg" alt="">
+        </div>
+
+        <div class="content">
+            <h3>Apa itu laptop?</h3>
+            <p>Sebuah laptop adalah komputer pribadi yang dapat dipindahkan dan dibawa dengan mudah sehingga dapat digunakan di banyak tempat. Mayoritas laptop mempunyai fitur yang sama dengan komputer, seperti mampu menjalankan perangkat lunak dan mengelola berkas.</p>
+            <a href="#blogs" class="btn">Pelajari Lebih Lanjut</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- menu section starts  -->
+
+<section class="menu" id="menu">
+
+    <h1 class="heading"> our <span>products terbaru</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/menu-1.jpeg" alt="">
+            <h3>Asus Vivobook 14</h3>
+            <h3>Intel Core i5-1135G7 Gen 11, Ram 8GB DDR 4GB, FHD, 512GB M.2 SSD</h3>
+            <div class="price">Rp11.000.000 <span>Rp12.000.000</span></div>
+            <a href="keranjang.html" class="btn">Beli Sekarang</a>
+        </div>
+    
+        <div class="box">
+            <img src="images/menu-2.jpeg" alt="">
+            <h3>Lenovo Ideapad 33081D100EDUS</h3>
+            <h3>Intel Pentium N5000, Ram 4GB, HD, Hardisk 500GB</h3>
+            <div class="price">Rp4.000.000 <span>Rp5.000.000</span></div>
+            <a href="keranjang.html" class="btn">Beli Sekarang</a>
+        </div>
+
+        <div class="box">
+            <img src="images/menu-3.jpg" alt="">
+            <h3>Lenovo Ideapad S145</h3>
+            <h3>Intel Core i7-1065G7 Gen 10, Ram 8GB DDR 4GB, FHD, 512GB M.2 SSD</h3>
+            <div class="price">Rp7.500.000 <span>Rp8.000.000</span></div>
+            <a href="keranjang.html" class="btn">Beli Sekarang</a>
+        </div>
+
+        <div class="box">
+            <img src="images/menu-4.jpg" alt="">
+            <h3>Acer Aspire 5</h3>
+            <h3>Intel Core i5-1135G7 Gen 11, Ram 8GB DDR 4GB, FHD, 512GB M.2 SSD</h3>
+            <div class="price">Rp10.500.000 <span>Rp11.000.000</span></div>
+            <a href="keranjang.html" class="btn">Beli Sekarang</a>
+        </div>
+
+    </div>
+    <script>
+        var cart = []; // Daftar item di keranjang
+      
+        function addToCart(productName, price) {
+          var item = {
+            productName: productName,
+            price: price
+          };
+      
+          cart.push(item);
+          updateCartDisplay();
+          alert("Item ditambahkan ke keranjang: " + productName + " - " + price);
+        }
+      
+        function updateCartDisplay() {
+          var cartItems = document.getElementById('cart-items');
+          cartItems.innerHTML = '';
+      
+          var totalPrice = 0;
+      
+          cart.forEach(function(item) {
+            var cartItem = document.createElement('li');
+            cartItem.textContent = item.productName + ' - ' + item.price;
+            cartItems.appendChild(cartItem);
+      
+            // Tambahkan harga produk ke total harga
+            totalPrice += item.price;
+          });
+      
+          // Tampilkan total harga di keranjang
+          document.getElementById('cart-total').textContent = 'Rp ' + totalPrice.toLocaleString();
+        }
+      
+        function checkout() {
+          // Lakukan proses checkout, misalnya menyimpan data ke database atau mengarahkan ke halaman pembayaran
+          alert("Anda akan dialihkan ke halaman pembayaran.");
+          // window.location.href = "halaman-pembayaran.html";
+        }
+      </script>
+</section>
+
+
+<!-- review section starts  -->
+
+<section class="review" id="review">
+
+    <h1 class="heading"> customer's <span>review</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/quote-img.png" alt="" class="quote">
+            <p>Barangnya bagus dan kami puas dengan barangnya terimakasih.</p>
+            <img src="images/pic-1.png" class="user" alt="">
+            <h3>Yofita Ulfa</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/quote-img.png" alt="" class="quote">
+            <p>toko ini mantap, diskonnya terbanyak.</p>
+            <img src="images/comment-1.jpg" class="user" alt="">
+            <h3>Gema</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/quote-img.png" alt="" class="quote">
+            <p>Kemasan kotak barangnya rapi, pengirimannya cepat dan laptopnya berkualitas.</p>
+            <img src="images/pic-2.png" class="user" alt="">
+            <h3>Baliamalkhan</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+        
+        <div class="box">
+            <img src="images/quote-img.png" alt="" class="quote">
+            <p>Harganya murah, barangnya berkualitas dan pelayanannya juga bagus.</p>
+            <img src="images/pic-3.png" class="user" alt="">
+            <h3>Ria Sunnisa</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- review section ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span>contact</span> us </h1>
+
+    <div class="row">
+
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63574.49325852475!2d96.65096213776172!3d5.198730663316903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30474322df3bdf49%3A0xacf272f37d5cbba3!2sBireuen%2C%20Kec.%20Kuala%2C%20Kabupaten%20Bireuen%2C%20Aceh!5e0!3m2!1sid!2sid!4v1699026688045!5m2!1sid!2sid"  allowfullscreen="" loading="lazy"></iframe>
+
+        <form action="">
+            <h3>get in touch</h3>
+            <div class="inputBox">
+                <span class="fas fa-user"></span>
+                <input type="text" placeholder="name">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-envelope"></span>
+                <input type="email" placeholder="email">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-phone"></span>
+                <input type="number" placeholder="number">
+            </div>
+            <a href="mailto:putro.aqila123@gimail.com" input type="submit" value="contact now" class="btn">contact now</a>
+        </form>
+
+    </div>
+
+</section>
+
+<!-- contact section ends -->
+
+<!-- blogs section starts  -->
+
+<section class="blogs" id="blogs">
+
+    <h1 class="heading"> our <span>blogs</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="image">
+                <img src="images/blog-1.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title">Kapan pertama kali laptop ditemukan?</a>
+                <p>Sejarah laptop pertama malah lahir dari hasil buah tangan Adam Osborne di tahun 1975. Dalam merealisasikan idenya tersebut ia bekerjasama dengan Felsenstein, seorang pemilik perusahaan produsen perangkat keras, yang juga merupakan profesional yang ahli dalam membuat sirkuit prosesor.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/blog-2.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title">Apa kegunaan dari laptop?</a>
+                <p>Laptop dapat digunakan untuk mengolah data, mencetak dokumen penting, dan berbagai kegunaan lain yang mempermudah pekerjaan. Laptop juga dapat dikatakan sebagai gudang informasi. Dengan menggunakan laptop, kebutuhan informasi terhadap sesuatu juga akan lebih cepat didapatkan.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/blog-3.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title">Apa Bedanya komputer dan laptop jelaskan?</a>
+                <p>Secara singkat, laptop atau komputer jinjing adalah sebuah komputer pribadi yang memiliki ukuran lebih kecil dan lebih ringan sehingga mudah untuk dipindahkan dan dibawa kemana saja. Sedangkan komputer adalah sebuah alat teknologi yang digunakan untuk mengolah data menurut prosedur yang sudah dirumuskan.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- blogs section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="share">
+        <a href="https://facebook.com" class="fab fa-facebook-f"></a>
+        <a href="https://twitter.com" class="fab fa-twitter"></a>
+        <a href="https://instagram.com/salman_al_farisy23" class="fab fa-instagram"></a>
+        <a href="https://tiktok.com" class="fab fa-tiktok"></a>
+        <a href="https://wa.me/6282277339532/?text=Hello" class="fab fa-whatsapp"></a>
+    </div>
+
+
+    <div class="credit">created by <span>Salman</span> | all rights reserved</div>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script src="js/check out.js"></script>
+</body>
+</html>
+
